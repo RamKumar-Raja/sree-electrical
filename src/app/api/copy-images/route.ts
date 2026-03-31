@@ -30,6 +30,21 @@ export async function GET() {
       }
     }
 
+    // Now copy public/logo.png to src/app/icon.png and remove default favicon.ico
+    const logoPath = path.join(process.cwd(), 'public', 'logo.png');
+    const newIconPath = path.join(process.cwd(), 'src', 'app', 'icon.png');
+    const oldFaviconPath = path.join(process.cwd(), 'src', 'app', 'favicon.ico');
+    
+    if (fs.existsSync(logoPath)) {
+        fs.copyFileSync(logoPath, newIconPath);
+        copied.push(`Copied logo.png to icon.png`);
+        
+        if (fs.existsSync(oldFaviconPath)) {
+            fs.unlinkSync(oldFaviconPath);
+            copied.push(`Deleted default favicon.ico`);
+        }
+    }
+
     return NextResponse.json({ success: true, copied });
   } catch (error) {
     return NextResponse.json({ success: false, error: String(error) });
