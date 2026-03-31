@@ -62,7 +62,7 @@ export default function ServicesPage() {
           </span>
           <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1]">
             End-to-end Solutions for <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
               Critical Infrastructure.
             </span>
           </h1>
@@ -76,21 +76,21 @@ export default function ServicesPage() {
           {servicesList.map((service, i) => (
             <div 
               key={i} 
-              className="group bg-white rounded-3xl p-8 xl:p-10 border border-slate-100 hover:border-blue-200 transition-all duration-500 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(37,99,235,0.15)] hover:-translate-y-2 relative overflow-hidden"
+              className="group bg-white rounded-3xl p-8 xl:p-10 border border-slate-100 hover:border-brand-primary/40 transition-all duration-500 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(155,244,103,0.15)] hover:-translate-y-2 relative overflow-hidden"
             >
               {/* Background Accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-bg/10 rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               
               {/* Number Watermark */}
               <div className="absolute -bottom-6 -right-6 text-[120px] font-black leading-none text-slate-50 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none select-none">
                 {service.num}
               </div>
 
-              <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-8 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500">
+              <div className="w-16 h-16 rounded-2xl bg-brand-bg/10 text-brand-primary flex items-center justify-center mb-8 border border-brand-bg/50 group-hover:bg-brand-primary group-hover:text-black transition-colors duration-500">
                 <service.icon size={32} strokeWidth={1.5} />
               </div>
 
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-900 transition-colors">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-brand-dark transition-colors">
                 {service.title}
               </h3>
               
@@ -98,7 +98,7 @@ export default function ServicesPage() {
                 {service.desc}
               </p>
 
-              <div className="mt-auto flex items-center text-sm font-bold text-blue-600 uppercase tracking-wider group/btn cursor-pointer">
+              <div className="mt-auto flex items-center text-sm font-bold text-brand-primary uppercase tracking-wider group/btn cursor-pointer">
                 <span>Learn More</span>
                 <ArrowRight size={16} className="ml-2 transition-transform group-hover/btn:translate-x-2" />
               </div>

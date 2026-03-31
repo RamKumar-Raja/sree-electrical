@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const quickLinks = [
@@ -32,8 +33,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* Column 1 */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <h3 className="text-3xl font-black text-white tracking-tighter">SRES <span className="text-blue-500">Electric</span></h3>
+            <Link href="/" className="inline-flex items-center gap-3 mb-6">
+              <Image 
+                src="/logo.png" 
+                alt="SRES Electric Logo" 
+                width={56} 
+                height={56} 
+                className="object-contain"
+              />
+              <h3 className="text-3xl font-black text-white tracking-tighter">SRES <span className="text-brand-primary">Electric</span></h3>
             </Link>
             <p className="text-sm mb-2 font-bold text-gray-200">Sree Raghavendra Electric Services Pvt. Ltd.</p>
             <p className="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-8">ISO 9001:2015 Certified | Est. 1994</p>
@@ -44,7 +52,7 @@ export default function Footer() {
                 <p className="leading-relaxed">Old #37-A, New #32, Kesari Nagar 6th Street Ext, Adambakkam, Chennai — 600088</p>
               </div>
               <div className="flex gap-3">
-                <span className="font-bold text-blue-500 shrink-0 mt-0.5 w-6">FX</span>
+                <span className="font-bold text-brand-primary shrink-0 mt-0.5 w-6">FX</span>
                 <p className="leading-relaxed">#59, Erikkarai Street, Amarambedu Village, Kanchipuram — 602109</p>
               </div>
             </address>
@@ -57,7 +65,7 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="group flex items-center text-sm font-medium hover:text-white transition-colors">
-                    <ChevronRight size={14} className="mr-3 text-blue-600/70 transition-transform group-hover:translate-x-1" />
+                    <ChevronRight size={14} className="mr-3 text-brand-primary/80 transition-transform group-hover:translate-x-1" />
                     {link.name}
                   </Link>
                 </li>
@@ -72,7 +80,7 @@ export default function Footer() {
               {services.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="group flex items-center text-sm font-medium hover:text-white transition-colors">
-                    <ChevronRight size={14} className="mr-3 text-blue-600/70 transition-transform group-hover:translate-x-1" />
+                    <ChevronRight size={14} className="mr-3 text-brand-primary/80 transition-transform group-hover:translate-x-1" />
                     {link.name}
                   </Link>
                 </li>
@@ -87,7 +95,7 @@ export default function Footer() {
               {products.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="group flex items-center text-sm font-medium hover:text-white transition-colors">
-                    <ChevronRight size={14} className="mr-3 text-blue-600/70 transition-transform group-hover:translate-x-1" />
+                    <ChevronRight size={14} className="mr-3 text-brand-primary/80 transition-transform group-hover:translate-x-1" />
                     {link.name}
                   </Link>
                 </li>

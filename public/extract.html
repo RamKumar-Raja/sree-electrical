@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><title>Color Extractor</title></head>
+<body>
+<img id="logo" src="logo.png" style="display:none;" />
+<div id="output">Loading...</div>
+<script>
+window.onload = function() {
+  const img = document.getElementById('logo');
+  const canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+  const colorCounts = {};
+  
+  for (let i = 0; i < imageData.length; i += 4) {
+    const r = imageData[i];
+    const g = imageData[i+1];
+    const b = imageData[i+2];
+    const a = imageData[i+3];
+    
+    if (a > 250) { // Opaque
+      const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+      // simplify slightly to group similar colors
+      if (!colorCounts[hex]) colorCounts[hex] = 0;
+      colorCounts[hex]++;
+    }
+  }
+  
+  const sorted = Object.entries(colorCounts).sort((a,b) => b[1] - a[1]);
+  let result = "DOMINANT COLORS:\\n";
+  for(let i=0; i<10 && i<sorted.length; i++){
+    result += sorted[i][0] + " - " + sorted[i][1] + " pixels\\n";
+  }
+  document.getElementById('output').innerText = result;
+};
+</script>
+</body>
+</html>
