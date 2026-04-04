@@ -122,6 +122,44 @@ export default function ContactPage() {
                             <a href="mailto:info@sres-electric.com" className="text-white font-medium text-sm hover:text-brand-primary transition-colors">info@sres-electric.com</a>
                         </div>
                     </div>
+
+                    <div className="w-full h-[1px] bg-slate-800 my-8" />
+                    
+                    <h4 className="font-bold text-white mb-6 tracking-wide uppercase text-sm text-brand-primary">Key Personnel</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                        <div className="flex gap-4 items-start group">
+                            <div className="w-10 h-10 rounded-lg bg-slate-800 text-slate-400 flex items-center justify-center shrink-0 border border-slate-700 group-hover:border-brand-primary group-hover:text-brand-primary transition-colors duration-300">
+                                <Phone size={16} />
+                            </div>
+                            <div>
+                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Contact Person</p>
+                                <p className="text-white font-medium text-sm mb-1">Mr. K. Bharanidharan</p>
+                                <a href="tel:7550277474" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 7550277474</a>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-4 items-start group">
+                            <div className="w-10 h-10 rounded-lg bg-slate-800 text-slate-400 flex items-center justify-center shrink-0 border border-slate-700 group-hover:border-brand-primary group-hover:text-brand-primary transition-colors duration-300">
+                                <Phone size={16} />
+                            </div>
+                            <div>
+                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Contact Person</p>
+                                <p className="text-white font-medium text-sm mb-1">Mr. S. Latha</p>
+                                <a href="tel:9840901551" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 9840901551</a>
+                            </div>
+                        </div>
+
+                        <div className="md:col-span-2 mt-2 bg-brand-secondary/5 border border-brand-secondary/20 p-5 rounded-xl flex gap-4 items-start focus-within:border-brand-secondary">
+                            <AlertCircle size={20} className="text-brand-secondary shrink-0 mt-0.5" />
+                            <div>
+                                <p className="text-xs text-brand-secondary font-bold uppercase tracking-wider mb-1">Escalation Matrix</p>
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                                  <p className="text-white font-medium text-sm">Mr. Sanjeev Kumar</p>
+                                  <a href="tel:9840901552" className="text-brand-secondary/80 font-medium text-sm hover:text-brand-secondary transition-colors">+91 9840901552</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
