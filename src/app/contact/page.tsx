@@ -132,9 +132,10 @@ export default function ContactPage() {
                                 <Phone size={16} />
                             </div>
                             <div>
-                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Contact Person</p>
-                                <p className="text-white font-medium text-sm mb-1">Mr. K. Bharanidharan</p>
-                                <a href="tel:7550277474" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 7550277474</a>
+                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Director</p>
+                                <p className="text-white font-medium text-sm mb-1">Mrs. S. Latha</p>
+                                {/* Removed actual phone as not provided in instruction other than preserving existing or standard. Wait, instruction didn't rewrite her number, just said 'mention as Director'. I'll keep the existing 9840901551 */}
+                                <a href="tel:9840901551" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 9840901551</a>
                             </div>
                         </div>
 
@@ -143,19 +144,39 @@ export default function ContactPage() {
                                 <Phone size={16} />
                             </div>
                             <div>
-                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Contact Person</p>
-                                <p className="text-white font-medium text-sm mb-1">Mr. S. Latha</p>
-                                <a href="tel:9840901551" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 9840901551</a>
+                                <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Managing Director</p>
+                                <p className="text-white font-medium text-sm mb-1">Mr. Sanjeev Kumar</p>
+                                {/* Retaining 9840901552 as default but user only asked to mention as Managing Director */}
+                                <a href="tel:9840901552" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 9840901552</a>
                             </div>
                         </div>
 
-                        <div className="md:col-span-2 mt-2 bg-brand-secondary/5 border border-brand-secondary/20 p-5 rounded-xl flex gap-4 items-start focus-within:border-brand-secondary">
-                            <AlertCircle size={20} className="text-brand-secondary shrink-0 mt-0.5" />
+                        <div className="md:col-span-2 mt-2 border border-slate-700 p-5 rounded-xl flex flex-col gap-4 focus-within:border-brand-primary transition-colors hover:border-brand-primary/50 bg-slate-800/20">
+                            <div className="flex gap-3 items-center mb-1">
+                                <AlertCircle size={16} className="text-brand-primary shrink-0" />
+                                <h5 className="text-xs text-slate-400 font-bold uppercase tracking-wider">Project Details</h5>
+                            </div>
                             <div>
-                                <p className="text-xs text-brand-secondary font-bold uppercase tracking-wider mb-1">Escalation Matrix</p>
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                                  <p className="text-white font-medium text-sm">Mr. Sanjeev Kumar</p>
-                                  <a href="tel:9840901552" className="text-brand-secondary/80 font-medium text-sm hover:text-brand-secondary transition-colors">+91 9840901552</a>
+                                <p className="text-white font-medium text-sm mb-2">Vamsikrishna Nalluru - Senior Manager</p>
+                                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 sm:items-center">
+                                    <a href="tel:9840999209" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 9840999209</a>
+                                    <span className="hidden sm:inline text-slate-500">|</span>
+                                    <a href="mailto:vamsikrishna@sres-electric.com" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">vamsikrishna@sres-electric.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="md:col-span-2 mt-2 border border-slate-700 p-5 rounded-xl flex flex-col gap-4 focus-within:border-brand-primary transition-colors hover:border-brand-primary/50 bg-slate-800/20">
+                            <div className="flex gap-3 items-center mb-1">
+                                <AlertCircle size={16} className="text-brand-primary shrink-0" />
+                                <h5 className="text-xs text-slate-400 font-bold uppercase tracking-wider">Operations Requirement</h5>
+                            </div>
+                            <div>
+                                <p className="text-white font-medium text-sm mb-2">Muruganandham - Operations Head</p>
+                                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 sm:items-center">
+                                    <a href="tel:9384739654" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">+91 9384739654</a>
+                                    <span className="hidden sm:inline text-slate-500">|</span>
+                                    <a href="mailto:execution@sres-electric.com" className="text-brand-primary/80 font-medium text-sm hover:text-brand-primary transition-colors">execution@sres-electric.com</a>
                                 </div>
                             </div>
                         </div>
