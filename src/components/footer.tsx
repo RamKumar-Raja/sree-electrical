@@ -28,7 +28,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0f172a] text-gray-300 pt-20 pb-10 border-t border-slate-800">
+    <footer className="bg-[#030810] text-gray-300 pt-20 pb-10 border-t border-white/5">
       <div className="container mx-auto px-4 md:px-8 xl:px-12 max-w-[1400px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
           {/* Column 1 */}
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Column 2 - Quick Links */}
           <div>
-            <h4 className="text-base font-bold text-white mb-8 border-b border-gray-800 pb-4 inline-block pr-6">Company</h4>
+            <h4 className="text-base font-bold text-white mb-8 border-b border-white/10 pb-4 inline-block pr-6">Company</h4>
             <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Column 3 - Services */}
           <div>
-            <h4 className="text-base font-bold text-white mb-8 border-b border-gray-800 pb-4 inline-block pr-6">Solutions</h4>
+            <h4 className="text-base font-bold text-white mb-8 border-b border-white/10 pb-4 inline-block pr-6">Solutions</h4>
             <ul className="space-y-4">
               {services.map((link) => (
                 <li key={link.name}>
@@ -90,7 +90,7 @@ export default function Footer() {
 
           {/* Column 4 - Products */}
           <div>
-            <h4 className="text-base font-bold text-white mb-8 border-b border-gray-800 pb-4 inline-block pr-6">Equipment</h4>
+            <h4 className="text-base font-bold text-white mb-8 border-b border-white/10 pb-4 inline-block pr-6">Equipment</h4>
             <ul className="space-y-4">
               {products.map((link) => (
                 <li key={link.name}>
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 pt-8 border-t border-slate-800/80">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 pt-8 border-t border-white/5">
           <p className="mb-4 md:mb-0">© {new Date().getFullYear()} SRES Electric. Powering Your World with Precision.</p>
           <div className="flex gap-6">
             <Link href="/contact" className="hover:text-blue-400 transition-colors">Careers & Internships</Link>

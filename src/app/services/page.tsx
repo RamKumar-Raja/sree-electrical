@@ -1,5 +1,6 @@
 import { Wrench, ShieldAlert, Activity, Users, Radio, Zap, Clock, Code, ArrowRight } from "lucide-react";
 import { ScrollReveal, StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
+import { CircuitBackground } from "@/components/CircuitBackground";
 
 const servicesList = [
   {
@@ -54,22 +55,23 @@ const servicesList = [
 
 export default function ServicesPage() {
   return (
-    <main className="pt-32 pb-24 bg-[#fafbfc] min-h-screen">
-      <div className="container mx-auto px-4 md:px-8 xl:px-12 max-w-[1400px]">
+    <main className="pt-32 pb-24 min-h-screen relative">
+      <CircuitBackground />
+      <div className="container relative z-10 mx-auto px-4 md:px-8 xl:px-12 max-w-[1400px]">
 
         <ScrollReveal>
           <div className="text-center max-w-4xl mx-auto mb-20 md:mb-32">
-            <span className="inline-block py-1.5 px-4 rounded-full bg-slate-900 text-white font-bold text-xs tracking-widest uppercase mb-6 shadow-xl">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase mb-6 border border-brand-primary/30">
               Our Expertise
             </span>
-            <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
               End-to-end Solutions for{" "}
               <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
                 Critical Infrastructure.
               </span>
             </h1>
-            <p className="text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto">
               Comprehensive electrical solutions tailored to your needs, from initial design to ongoing maintenance.
             </p>
           </div>
@@ -78,21 +80,21 @@ export default function ServicesPage() {
         <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 relative z-20">
           {servicesList.map((service, i) => (
             <StaggerItem key={i}>
-              <div className="group bg-white rounded-3xl p-8 xl:p-10 border border-slate-100 hover:border-brand-primary/40 transition-all duration-500 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(155,244,103,0.15)] hover:-translate-y-2 relative overflow-hidden h-full flex flex-col">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-bg/10 rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                <div className="absolute -bottom-6 -right-6 text-[120px] font-black leading-none text-slate-50 opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none select-none">
+              <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 xl:p-10 border border-white/10 hover:border-brand-primary/40 transition-all duration-500 hover:shadow-[0_20px_50px_-15px_rgba(155,244,103,0.15)] hover:-translate-y-2 relative overflow-hidden h-full flex flex-col">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute -bottom-6 -right-6 text-[120px] font-black leading-none text-white opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none select-none">
                   {service.num}
                 </div>
 
-                <div className="w-16 h-16 rounded-2xl bg-brand-bg/10 text-brand-primary flex items-center justify-center mb-8 border border-brand-bg/50 group-hover:bg-brand-primary group-hover:text-black transition-colors duration-500 shrink-0">
+                <div className="w-16 h-16 rounded-2xl bg-brand-primary/10 text-brand-primary flex items-center justify-center mb-8 border border-brand-primary/20 group-hover:bg-brand-primary group-hover:text-black transition-colors duration-500 shrink-0">
                   <service.icon size={32} strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-brand-dark transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-brand-primary transition-colors">
                   {service.title}
                 </h3>
 
-                <p className="text-slate-500 leading-relaxed font-medium mb-8 flex-1">
+                <p className="text-slate-400 leading-relaxed font-medium mb-8 flex-1">
                   {service.desc}
                 </p>
 

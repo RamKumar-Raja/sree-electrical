@@ -1,6 +1,7 @@
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { ScrollReveal, StaggerReveal, StaggerItem } from "@/components/ScrollReveal";
+import { CircuitBackground } from "@/components/CircuitBackground";
 
 const productsList = [
   {
@@ -45,22 +46,23 @@ const certBadges = ["IEC Type-Tested", "ISI Marked"];
 
 export default function ProductsPage() {
   return (
-    <main className="pt-32 pb-24 bg-white min-h-screen">
-      <div className="container mx-auto px-4 md:px-8 xl:px-12 max-w-[1400px]">
+    <main className="pt-32 pb-24 min-h-screen relative">
+      <CircuitBackground />
+      <div className="container relative z-10 mx-auto px-4 md:px-8 xl:px-12 max-w-[1400px]">
 
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center mb-24">
-            <span className="inline-block py-1.5 px-3 rounded-full bg-brand-bg/10 text-brand-primary font-bold text-sm tracking-wider uppercase mb-6 border border-brand-bg/50 shadow-sm">
+            <span className="inline-block py-1.5 px-3 rounded-full bg-brand-primary/10 text-brand-primary font-bold text-sm tracking-wider uppercase mb-6 border border-brand-primary/30 shadow-sm">
               High-Quality Equipment
             </span>
-            <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-8 tracking-tighter leading-tight">
+            <h1 className="text-5xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-tight">
               Reliable Products,{" "}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-primary to-brand-secondary">
                 Stringent Quality.
               </span>
             </h1>
-            <p className="text-xl text-slate-500 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
               We manufacture and supply a wide range of reliable electrical products, meeting the highest industry safety and operational standards.
             </p>
           </div>
@@ -70,30 +72,30 @@ export default function ProductsPage() {
           {productsList.map((product, i) => (
             <StaggerItem key={i}>
               <div className="group flex flex-col items-center">
-                <div className="w-full aspect-[4/3] bg-slate-50 rounded-[2rem] mb-8 flex flex-col items-center justify-center border border-slate-100 group-hover:border-brand-bg/50 transition-all duration-500 shadow-sm hover:shadow-xl relative overflow-hidden">
+                <div className="w-full aspect-[4/3] bg-[#0d1c35] rounded-[2rem] mb-8 flex flex-col items-center justify-center border border-white/10 group-hover:border-brand-primary/30 transition-all duration-500 relative overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.title}
                     fill
-                    className="object-cover z-0 mix-blend-multiply transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover z-0 transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
                 </div>
 
                 <div className="text-center px-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-md mb-4 border border-slate-200 shadow-sm">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-gray-300 text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-md mb-4 border border-white/20">
                     {certBadges.includes(product.badge)
-                      ? <ShieldCheck size={14} className="text-emerald-500" />
+                      ? <ShieldCheck size={14} className="text-emerald-400" />
                       : <CheckCircle2 size={14} className="text-brand-primary" />
                     }
                     {product.badge}
                   </div>
 
-                  <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight leading-tight">
+                  <h3 className="text-2xl font-black text-white mb-4 tracking-tight leading-tight">
                     {product.title}
                   </h3>
 
-                  <p className="text-slate-500 leading-relaxed font-medium">
+                  <p className="text-slate-400 leading-relaxed font-medium">
                     {product.desc}
                   </p>
                 </div>

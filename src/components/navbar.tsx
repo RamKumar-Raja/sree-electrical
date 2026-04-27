@@ -37,7 +37,7 @@ export default function Navbar() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
       isTransparent
         ? "bg-transparent py-6 border-transparent"
-        : "bg-white/95 backdrop-blur-md shadow-sm border-gray-100 py-4"
+        : "bg-[#060c18]/90 backdrop-blur-md border-white/10 py-4"
     }`}>
       <div className="container mx-auto px-4 md:px-8 xl:px-12 max-w-[1400px]">
         <div className="flex justify-between items-center">
@@ -51,9 +51,7 @@ export default function Navbar() {
               priority
               className="object-contain"
             />
-            <span className={`text-2xl font-black tracking-tighter transition-colors ${
-              isTransparent ? "text-white" : "text-brand-dark"
-            }`}>
+            <span className="text-2xl font-black tracking-tighter text-white">
               SRES <span className="text-brand-primary">Electric</span>
             </span>
           </Link>
@@ -70,7 +68,7 @@ export default function Navbar() {
                     className={`text-[15px] font-semibold transition-all relative group ${
                       isTransparent
                         ? isActive ? "text-white" : "text-white/80 hover:text-white"
-                        : isActive ? "text-brand-primary" : "text-gray-600 hover:text-brand-primary"
+                        : isActive ? "text-brand-primary" : "text-gray-300 hover:text-white"
                     }`}
                   >
                     {link.name}
@@ -127,7 +125,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="lg:hidden overflow-hidden"
           >
-            <div className="bg-white border-t border-gray-100 shadow-xl py-6 flex flex-col items-center gap-5">
+            <div className="bg-[#060c18]/95 border-t border-white/10 py-6 flex flex-col items-center gap-5">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
@@ -139,7 +137,7 @@ export default function Navbar() {
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`text-lg font-bold transition-colors ${
-                      pathname === link.href ? "text-brand-primary" : "text-gray-800 hover:text-brand-primary"
+                      pathname === link.href ? "text-brand-primary" : "text-gray-300 hover:text-white"
                     }`}
                   >
                     {link.name}
